@@ -11,7 +11,6 @@ import { ProductService } from '../product.service';
 export class ProductCreateComponent implements OnInit {
 
   product: Product = {
-    id: 1,
     name: '',
     price: null
   }
@@ -22,6 +21,8 @@ export class ProductCreateComponent implements OnInit {
   }
   
   createProduct(): void {
+
+    console.log("Entrou aqui")
     this.productService.create(this.product).subscribe(() => {
       this.productService.showMessage('Produto criado!')
       this.router.navigate(['/products'])
